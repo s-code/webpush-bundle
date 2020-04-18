@@ -9,8 +9,14 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('bentools_webpush');
+        $treeBuilder = new TreeBuilder('bentools_webpush');
+
+        if (method_exists($treeBuilder, 'getRootNode')) {
+            $rootNode = $treeBuilder->getRootNode();
+        } else {
+            // BC layer for symfony/config 4.1 and older
+            $rootNode = $treeBuilder->root('doctrine_migrations', 'array');
+        }
 
         $rootNode
             ->children()
