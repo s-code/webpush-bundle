@@ -17,7 +17,7 @@
     "ext-openssl": "*",
     "guzzlehttp/guzzle": "~6.0",
     "minishlink/web-push": "^4.0|^5.0",
-    "symfony/http-kernel": "^3.0|^4.0"
+    "symfony/http-kernel": "^3.0|^4.0|^5.0"
   },
   "require-dev": {
     "bentools/doctrine-static": "1.0.x-dev",
